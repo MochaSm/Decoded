@@ -1,15 +1,16 @@
-package org.firstinspires.ftc.teamcode.Subsytem;
+package org.firstinspires.ftc.teamcode.config.Subsytem;
 
+import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-public class Hopper {
+public class Hopper extends SubsystemBase {
 
     // TODO check motorex vs motor
     private static DcMotorEx leftRotation, rightRotation;
 
-    public static void init(HardwareMap hw){
+    public static void init(HardwareMap hw) {
         leftRotation = hw.get(DcMotorEx.class, "lHopper");
         rightRotation = hw.get(DcMotorEx.class, "rHopper");
 
@@ -18,7 +19,7 @@ public class Hopper {
         rightRotation.setDirection(DcMotor.Direction.REVERSE);
     } // init
 
-    public static void hopperPower(double p){
+    public static void hopperPower(double p) {
         leftRotation.setPower(p);
         rightRotation.setPower(p);
     } // hopperPower

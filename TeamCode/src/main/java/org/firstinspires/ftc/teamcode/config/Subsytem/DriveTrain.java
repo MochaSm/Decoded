@@ -1,11 +1,12 @@
-package org.firstinspires.ftc.teamcode.Subsytem;
+package org.firstinspires.ftc.teamcode.config.Subsytem;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IMU;
+import com.arcrobotics.ftclib.command.SubsystemBase;
 
-public class DriveTrain {
+public class DriveTrain extends SubsystemBase {
     private static DcMotorEx frontLeft, frontRight, rearLeft, rearRight;
     private static IMU imu;
 

@@ -1,15 +1,16 @@
-package org.firstinspires.ftc.teamcode.Subsytem;
+package org.firstinspires.ftc.teamcode.config.Subsytem;
 
+import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-public class Intake {
+public class Intake extends SubsystemBase {
 
     // TODO check motorex vs motor
     private static DcMotorEx leftIntake, rightIntake;
 
-    public static void init(HardwareMap hw){
+    public static void init(HardwareMap hw) {
         leftIntake = hw.get(DcMotorEx.class, "lIntake");
         rightIntake = hw.get(DcMotorEx.class, "rIntake");
 
@@ -18,7 +19,7 @@ public class Intake {
         rightIntake.setDirection(DcMotor.Direction.REVERSE);
     } // init
 
-    public static void intakePower(double p){
+    public static void intakePower(double p) {
         leftIntake.setPower(p);
         rightIntake.setPower(p);
     } // intakePower

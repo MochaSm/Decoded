@@ -1,16 +1,17 @@
-package org.firstinspires.ftc.teamcode.Subsytem;
+package org.firstinspires.ftc.teamcode.config.Subsytem;
 
+import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-public class Shooter {
+public class Shooter extends SubsystemBase {
 
     // TODO check motorex vs motor
     private static DcMotorEx leftShooter, rightShooter;
     // make ramp motor or servo
 
-    public static void init(HardwareMap hw){
+    public static void init(HardwareMap hw) {
         leftShooter = hw.get(DcMotorEx.class, "lShoot");
         rightShooter = hw.get(DcMotorEx.class, "rShoot");
 
@@ -19,7 +20,7 @@ public class Shooter {
         rightShooter.setDirection(DcMotor.Direction.REVERSE);
     } // init
 
-    public static void shooterPower(double p){
+    public static void shooterPower(double p) {
         leftShooter.setPower(p);
         rightShooter.setPower(p);
     } // shoot
